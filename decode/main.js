@@ -34,9 +34,9 @@ function render(){
 
   for(let x=BigInt(0);x<xw;x++){
     for(let y=ymin;y<ymax;y++){
-      if(BigInt(1)<BigInt(2)*(floor(floor(y/BigInt(17))*(BigInt(2) ** BigInt(-17)*floor(x)-(floor(y) % BigInt(17))) % BigInt(2)) )) {
-        drawx = x*size;
-        drawy = y*size;
+      if(BigInt(1)<BigInt(2)*(floor(floor(y/BigInt(17))*(BigInt(2) ** BigInt(17)*floor(x)-(floor(y) % BigInt(17))) % BigInt(2)) )) {
+        drawx = x*BigInt(size);
+        drawy = y*BigInt(size);
         ctx.fillRect(drawx,drawy,size,size);
       }
     }
