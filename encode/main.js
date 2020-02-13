@@ -3,7 +3,7 @@ var ctx = canvas.getContext('2d');
 var xw = 106;
 var yw = 17;
 
-var zo = new Array(xw*yw+1).fill(0);
+var zo = new Array(xw*yw).fill(0);
 console.log(zo);
 
 if(window.innerWidth/xw<window.innerHeight/yw){
@@ -40,7 +40,5 @@ canvas.addEventListener('click',function(event){
     zo[index] = 0;
     ctx.clearRect(drawx+1,drawy+1,size-1,size-1);
   }
+  document.getElementById('output').innerHTML = bigInt(zo.join(''),2).toString();
 });
-
-var bin = zo.join('');
-var base10 = parseInt(bin,2);
