@@ -39,18 +39,14 @@ function render(){
 
   for(let x=0;x<xw;x++){
     for(let y=ymin;y<ymax;y++){
-      console.log(floor(mod(floor(y/BigInt(17)) / BigInt(2)**(-(BigInt(-17*Math.floor(x))-mod(floor(y),BigInt(17)))),BigInt(2))));
       if(
         1/2 < floor(mod(floor(y/BigInt(17)) / BigInt(2)**(-(BigInt(-17*Math.floor(x))-mod(floor(y),BigInt(17)))),BigInt(2)))
       ) {
-
         drawx = (xw-x-1)*size;
         drawy = (Number(y-ymin))*size;
-        console.log(drawx,drawy,size,size);
         ctx.fillRect(drawx,drawy,size,size);
       }
     }
   }
-  console.log('end');
 }
 render();
