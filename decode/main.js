@@ -14,12 +14,19 @@ var mcbheight = yw*size+1;
 canvas.width=mcbwidth;
 canvas.height=mcbheight;
 
-for(let h=0;h<=xw;h++){
-  ctx.fillRect(h*size,0,1,yw*size);
+function clear(){
+  ctx.clearRect(0,0,mcbwidth,mcbheight);
+
+  for(let h=0;h<=xw;h++){
+    ctx.fillRect(h*size,0,1,yw*size);
+  }
+
+  for(let v=0;v<=yw;v++){
+    ctx.fillRect(0,v*size,xw*size,1);
+  }
 }
-for(let v=0;v<=yw;v++){
-  ctx.fillRect(0,v*size,xw*size,1);
-}
+
+clear();
 
 function floor(inp){
   return inp - inp % BigInt(1);
@@ -30,6 +37,7 @@ function mod(b,s){
 
 function render(){
   console.log('begin');
+  clear();
   let xwb = BigInt(xw);
   let ywb = BigInt(yw);
   let drawx,drawy;
